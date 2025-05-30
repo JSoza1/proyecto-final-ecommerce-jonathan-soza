@@ -115,21 +115,44 @@
                 <button>Comprar</button>
             </article>
         </section>
-        <section id="Contacto">
-            <!-- Section de contacto, configurada con Formspree -->
-            <h2>Contacto</h2>
-            <form action="https://formspree.io/f/xldjzlrr" method="post">
-                <label for="Nombre">Nombre:</label>
-                <input type="text" id="Nombre" name="Nombre" required>
-                <br><br>
-                <label for="email">Correo electronico:</label>
-                <input type="email" id="email" name="email" required>
-                <br><br>
-                <label for="mensaje">Mensaje:</label>
-                <br>
-                <textarea name="mensaje" id="mensaje" rows="4" cols="50" required></textarea>
-                <br><br>
-                <button type="submit">Enviar</button>
+        <h2>Reseñas</h2>
+        <section id="reseñas">
+            <div class="card">
+                <h3>Nombre de persona</h3>
+                <img src="" alt="foto">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nihil minus reiciendis incidunt hic eos, pariatur quia error soluta est?</p>
+            </div>
+            <div class="card">
+                <h3>Nombre de persona</h3>
+                <img src="" alt="foto">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nihil minus reiciendis incidunt hic eos, pariatur quia error soluta est?</p>
+            </div>
+            <div class="card">
+                <h3>Nombre de persona</h3>
+                <img src="" alt="foto">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nihil minus reiciendis incidunt hic eos, pariatur quia error soluta est?</p>
+            </div>
+        </section>
+        <h2>Contacto</h2>
+        <section>
+            <form class="formu" action="https://formspree.io/f/xldjzlrr" method="post">
+                <div class="f1">
+                    <div class="subf1">
+                        <label for="Nombre">Nombre:</label>
+                        <input type="text" id="Nombre" name="Nombre" required>
+                    </div>
+                    <div class="subf1">
+                        <label for="email">Correo electronico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div> 
+                </div>
+                <div class="f2">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" rows="4" cols="50" required></textarea>
+                </div>
+                <div class="f3">
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
         </section>
     </main>

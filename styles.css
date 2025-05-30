@@ -41,3 +41,81 @@ article {
 img {
     width: 100%;
 }
+
+#reseñas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    padding: 2%;
+    border-style: double;
+} 
+
+.card {
+    border-style: solid;
+    padding: 5%;
+    box-shadow: 0 4px 8px rgba(12, 171, 245, 0.884);
+}
+
+.card:hover {
+    transform: translateY(-5px)
+}
+
+/* formulario grid */
+.formu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-style: double;
+    margin: 5%;
+}
+
+/* secciones del formulario */
+.f1 {
+    /* importante volver a declarar display y distribucion de columnas, en sub categorias de css */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1 / 3;
+    gap: 5%;
+    
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+}
+
+.subf1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.f2 {
+    display: grid;
+    grid-column: 1 / 3;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.f3 {
+    grid-column: 2 / 3; /* ubica esta sección en la segunda columna del formulario - funciona por el padre formu */
+    display: flex;
+    justify-content: end;
+    padding-right: 6%;
+    padding-bottom: 5%;
+}
+
+input,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+ @media (max-width: 768px) {
+    body {
+        font-size: 11px;
+    }
+    button {
+    font-size: 11px;    
+    }
+ }
