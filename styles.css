@@ -1,0 +1,43 @@
+ul {
+    display: flex;
+    /* se saca el punto de la lista */
+    list-style: none;
+    justify-content: space-around;
+}
+
+a {
+    /* se saca el subrayado */
+    text-decoration: none;
+}
+
+#Productos {
+    display: flex;
+    border-style: solid;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+article {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-style: solid;
+   border-color: brown;
+   margin: 2%;
+   margin-top: 5%;
+   padding: 3%;
+
+   /* Flex-grow, flex-shrink, flex-basis "resumido"*/
+   flex: 1 1 250px;
+   /* - - - - - - - - - - - - - - - - - - - - - - -*/
+
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: 250px;
+   /* Para que no se estiren demasiado en pantallas grandes */
+   max-width: 300px;
+}
+
+img {
+    width: 100%;
+}
