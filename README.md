@@ -1,1 +1,1 @@
-# proyecto-final-ecommerce-jonathan-soza
+Este proyecto es una página web de Ecommerce desarrollada como parte esencial del curso "Talento Tech". La página está estructurada con HTML semántico para organizar el contenido, CSS y Javascript.
