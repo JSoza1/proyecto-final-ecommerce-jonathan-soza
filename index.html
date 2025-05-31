@@ -18,14 +18,14 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#n1">Nosotros</a></li>
+                <li><a href="#n2">Productos</a></li>
+                <li><a href="#n3">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Nosotros</h2>
+        <h2 id="n1" class="h2-a">Nosotros</h2>
         <section id="Nosotros">
             <video src="assets/video.mp4" width="400px" height="200px" controls>
                 <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
@@ -38,7 +38,7 @@
                <br><br>
                ¡Explora nuestra colección y encuentra el par perfecto para ti! 🔥</p>
         </section>
-        <h2>Productos</h2>
+        <h2 id="n2" class="h2-b">Productos</h2>
         <section id="Productos">
             <article>
                 <h3>Lentes 1</h3>
@@ -113,7 +113,7 @@
                 <button>Comprar</button>
             </article>
         </section>
-        <h2>Reseñas</h2>
+        <h2 class="h2-a">Reseñas</h2>
         <section id="reseñas">
             <div class="card">
                 <h3>Nombre de persona</h3>
@@ -131,7 +131,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nihil minus reiciendis incidunt hic eos, pariatur quia error soluta est?</p>
             </div>
         </section>
-        <h2>Contacto</h2>
+        <h2 id="n3" class="h2-b">Contacto</h2>
         <section>
             <form class="formu" action="https://formspree.io/f/xldjzlrr" method="post">
                 <div class="f1">
@@ -155,7 +155,30 @@
         </section>
     </main>
     <footer>
-        <p>Esto es el pie de pagina</p>
+        <div id="footerSuperior">
+            <div id="textoFooter">
+                <p id="texto2">En nuestra óptica, combinamos calidad, estilo y tecnología para que encuentres la mejor visión sin complicaciones. Compra online con confianza y descubre una nueva forma de cuidar tu mirada. 🌟</p>
+            </div>
+            <div id="seccionesFooter">
+                <p>Sitio</p>
+                <a class="enlaces1" href="#n1">Nosotros</a>
+                <a class="enlaces1" href="#n2">Productos</a>
+                <a class="enlaces1" href="#n3">Contacto</a>
+            </div>
+            <div id="redesFooter">
+                <a href="" target="_blank">
+                    <img class="redesLogos" src="assets\wha2.png" alt="logito1redes">
+                </a>
+                <a href="" target="_blank">
+                    <img class="redesLogos" src="assets\insta.png" alt="logito2redes">
+                </a>
+            </div>
+        </div>
+        <div id="footerInferior">
+            <p>Desarrollado por Soza Jonathan</p>
+            <p>Copyright © 2025</p>
+        </div>
     </footer>
+    
 </body>
 </html>
