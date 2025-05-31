@@ -84,6 +84,14 @@ a {
 
 /* Fin apartado Header */
 
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin: 0; /* Agregué esto */
+    padding: 0; /* Agregué esto */
+}
+
 /* Inicio apartado nosotros */
 
 #Nosotros {
@@ -312,44 +320,54 @@ textarea {
 
 /* Inicio apartado media */
 
- @media (max-width: 768px) {
+ @media (max-width: 1200px) {
+
+    .letra-nav {
+        font-size: 15px;
+    }
+
+    .h2-a { 
+    padding-top: 3%;
+    padding-left: 2.5%;
+    padding-bottom: 2%;
+    }
+
+    .h2-b {
+    padding-top: 3%;
+    padding-left: 2.5%;
+    padding-bottom: 2%;  
+    }
+
+}
+
+@media (max-width: 768px) {
     body {
         font-size: 11px;
     }
     button {
-    font-size: 11px;    
+        font-size: 11px;    
     }
- }
 
- @media (max-width: 1200px) {
+    .letra-nav {
+        font-size: 11px;
+    }
 
     .contenedor-header {
-    width: 30%;
-    display: flex;
-}
+        width: 55%;
+    }   
 
-.sub-contenedor-header {
-    display: flex;
-    width: 30%;
-    padding: 0;
-    margin: 0;
-}
+    .sub-contenedor-header {
+        width: 30%;
+    }
+    
+    .sub-contenedor-header2 {
+        width: 70%;
+    }
+    
+    nav {
+        width: 45%;
+    }
 
-.sub-contenedor-header2 {
-    display: flex;
-    width: 70%;
-    align-items: center;
-    margin-left: 2%;
-}
-
-  nav {
-    width: 35%;
-  }
-
-.letra-nav {
-    font-size: small;
-}
-
-}
+ }
 
  /* Fin apartado media */
