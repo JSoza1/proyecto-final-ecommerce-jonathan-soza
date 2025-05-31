@@ -1,3 +1,39 @@
+/* Apartado Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.contenedor-header {
+    width: 30%;
+    display: flex;
+}
+
+.sub-contenedor-header {
+    display: flex;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+}
+
+#logo {
+    max-width: 100%;
+    width: 100%;
+}
+
+.sub-contenedor-header2 {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 35%;
+}
+
 ul {
     display: flex;
     /* se saca el punto de la lista */
@@ -9,6 +45,9 @@ a {
     /* se saca el subrayado */
     text-decoration: none;
 }
+
+/* Fin apartado Header */
+
 
 #Productos {
     display: flex;
