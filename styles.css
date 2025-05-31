@@ -6,10 +6,13 @@
 
 /* Configuraciones globales */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     background-color:rgb(255, 255, 255);
     padding: 0;
     margin: 0;
+    font-family: Roboto, Arial, Helvetica, sans-serif
 }
 
 .h2-a {
@@ -55,8 +58,8 @@ header {
 .sub-contenedor-header2 {
     display: flex;
     width: 70%;
-    justify-content: center;
     align-items: center;
+    margin-left: 2%;
 }
 
 nav {
@@ -75,8 +78,26 @@ a {
     text-decoration: none;
 }
 
+.letra-nav {
+    font-size: large;
+}
+
 /* Fin apartado Header */
 
+/* Inicio apartado nosotros */
+
+#Nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(255, 232, 214);
+}
+
+/* Fin apartado nosotros */
+
+/* Apartado productos */
 
 #Productos {
     display: flex;
@@ -105,9 +126,20 @@ article {
    max-width: 300px;
 }
 
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 img {
     width: 100%;
 }
+
+/* Fin apartado productos */
+
+/* Inicio apartado reseñas */
 
 #reseñas {
     display: grid;
@@ -117,16 +149,11 @@ img {
     background-color: rgb(255, 232, 214);
 } 
 
-#Nosotros {
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: rgb(255, 232, 214);
-}
-
-.card {
     padding: 5%;
     box-shadow: 4px 4px 8px rgba(255, 150, 29, 0.644);
     border-style: solid;
@@ -138,7 +165,18 @@ img {
     transform: translateY(-5px)
 }
 
-/* formulario grid */
+.imagen-reseña {
+    width: 50%;
+}
+
+.texto-r {
+    font-style:oblique;
+}
+
+/* Fin apartado reseñas */
+
+/* Inicio apartado formulario Grid / Flexbox */
+
 .formu {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -190,16 +228,9 @@ textarea {
     resize: none;
 }
 
- @media (max-width: 768px) {
-    body {
-        font-size: 11px;
-    }
-    button {
-    font-size: 11px;    
-    }
- }
+/* Fin apartado formulario */
 
- /*============ Apartado footer =============*/
+ /* Apartado footer */
 
 #footerSuperior {
     background-color: rgb(255, 232, 214)
@@ -232,26 +263,23 @@ textarea {
     gap: 5px;
   }
 
-
-.enlaces1 {
+.letra-nav, .enlaces1 {
     text-decoration: none;
 }
 
-.enlaces1 {
+.letra-nav, .enlaces1 {
     color: rgb(0, 0, 0);
     text-shadow: 4px 4px 8px rgb(0, 0, 0); /* Sombra negra fuerte */
 }
 
-.enlaces1:visited {
+.enlaces1:visited, .letra-nav:visited{
     color: rgb(0, 0, 0);
     text-shadow: 4px 4px 8px rgb(0, 0, 0); /* Sombra negra fuerte */
 }
 
-.enlaces1:hover {
+.enlaces1:hover, .letra-nav:hover {
     color: rgb(255, 151, 29);
-    transform: scale(1); 
 }
-
 
 #redesFooter {
     display: flex;
@@ -279,6 +307,49 @@ textarea {
 .redesLogos:hover {
     transform: scale(1.1);
   }
-  
 
-/*============ Fin apartado footer ==============*/
+/* Fin apartado footer */
+
+/* Inicio apartado media */
+
+ @media (max-width: 768px) {
+    body {
+        font-size: 11px;
+    }
+    button {
+    font-size: 11px;    
+    }
+ }
+
+ @media (max-width: 1200px) {
+
+    .contenedor-header {
+    width: 30%;
+    display: flex;
+}
+
+.sub-contenedor-header {
+    display: flex;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-contenedor-header2 {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    margin-left: 2%;
+}
+
+  nav {
+    width: 35%;
+  }
+
+.letra-nav {
+    font-size: small;
+}
+
+}
+
+ /* Fin apartado media */
