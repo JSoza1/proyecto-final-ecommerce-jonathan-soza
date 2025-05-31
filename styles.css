@@ -341,12 +341,17 @@ textarea {
 }
 
 @media (max-width: 768px) {
+
+    /* general */
+
     body {
         font-size: 11px;
     }
     button {
         font-size: 11px;    
     }
+
+    /* header */
 
     .letra-nav {
         font-size: 11px;
@@ -367,6 +372,30 @@ textarea {
     nav {
         width: 45%;
     }
+
+    /* footer */
+
+    #footerSuperior {
+        justify-content: space-evenly;
+    }
+
+    #textoFooter {
+        width: 40%;
+    }
+
+    #seccionesFooter {
+        width: 20%;
+        padding-left: 5%;
+    }
+    
+    #redesFooter {
+        width: 30%;
+    }
+    
+    #texto2 {
+        text-align: justify;
+    }
+    
 
  }
 
