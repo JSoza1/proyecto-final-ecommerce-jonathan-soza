@@ -1,5 +1,6 @@
 //API Usada https://dummyjson.com/docs/products
 
+// Funcion que se activa despues de que este toda la web cargada
 document.addEventListener('DOMContentLoaded', () => {
 
 // Definimos una función asíncrona para obtener lentes
@@ -12,10 +13,14 @@ async function obtenerLentes() {
     const respuesta = await fetch('https://dummyjson.com/products/category/sunglasses');
 
     // Convertimos la respuesta a JSON
-    const lentes = await respuesta.json();
+    const datos = await respuesta.json();
 
     // Mostramos los datos obtenidos en la consola
-    console.log("Lentes obtenidos:", lentes);
+    console.log("Datos completos obtenidos:", datos);
+
+    const productos = datos.products
+
+    console.log("a ver ", datos.products)
 
     // (Codigo que se ejecuta si falla el try)
   } catch (error) {
