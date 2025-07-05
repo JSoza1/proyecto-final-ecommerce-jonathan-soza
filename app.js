@@ -15,12 +15,38 @@ async function obtenerLentes() {
     // Convertimos la respuesta a JSON
     const datos = await respuesta.json();
 
-    // Mostramos los datos obtenidos en la consola
+    // Mostramos los datos completos de la API
     console.log("Datos completos obtenidos:", datos);
 
-    const productos = datos.products
+    // Almacenamos el array de los productos en una variable
+    const productosCompletos = datos.products
 
-    console.log("a ver ", datos.products)
+    // Mostramos solo los datos de los productos en consola
+    console.log("Datos de los productos", productosCompletos)
+
+    // Recorremos el array, y generamos uno nuevo ( Template Strings / Template Literals )
+    const productos = productosCompletos.map(producto => {
+
+      return  `
+
+                <article>
+                <h3>${producto.title}</h3>
+                <figure>
+                    <img src="${producto.images[0]}" alt="${producto.title}">
+                    <figcaption>$${producto.price}</figcaption>
+                </figure>
+                <p>
+                ${producto.description}
+                </p>
+                <button>Agregar al Carrito</button>
+                </article>
+            
+              `;
+
+    });
+
+    // Agregamos los elementos del array al contenedor Productos del html
+    document.getElementById("Productos").innerHTML = productos.join("");
 
     // (Codigo que se ejecuta si falla el try)
   } catch (error) {
@@ -32,10 +58,5 @@ async function obtenerLentes() {
 
 // Llamado a la función para que haga la petición
 obtenerLentes();
-
-
-
-
-
 
 });
