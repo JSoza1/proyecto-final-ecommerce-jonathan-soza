@@ -3,60 +3,78 @@
 // Funcion que se activa despues de que este toda la web cargada
 document.addEventListener('DOMContentLoaded', () => {
 
-// Definimos una función asíncrona para obtener lentes
-async function obtenerLentes() {
+  // Definimos una función asíncrona para obtener lentes
+  async function obtenerLentes() {
 
     // try en ingles es "intentar / probar" (este codigo puede fallar)
-  try {
+    try {
 
-    // Hacemos la petición HTTP a la API
-    const respuesta = await fetch('https://dummyjson.com/products/category/sunglasses');
+      // Hacemos la petición HTTP a la API
+      const respuesta = await fetch('https://dummyjson.com/products/category/sunglasses');
 
-    // Convertimos la respuesta a JSON
-    const datos = await respuesta.json();
+      // Convertimos la respuesta a JSON
+      const datos = await respuesta.json();
 
-    // Mostramos los datos completos de la API
-    console.log("Datos completos obtenidos:", datos);
+      // Mostramos los datos completos de la API
+      console.log("Datos completos obtenidos:", datos);
 
-    // Almacenamos el array de los productos en una variable
-    const productosCompletos = datos.products
+      // Almacenamos el array de los productos en una variable
+      const productosCompletos = datos.products;
 
-    // Mostramos solo los datos de los productos en consola
-    console.log("Datos de los productos", productosCompletos)
+      // Mostramos solo los datos de los productos en consola
+      console.log("Datos de los productos", productosCompletos);
 
-    // Recorremos el array, y generamos uno nuevo ( Template Strings / Template Literals )
-    const productos = productosCompletos.map(producto => {
+      // Recorremos el array, y generamos uno nuevo ( Template Strings / Template Literals )
+      const productos = productosCompletos.map(producto => {
+        return `
+          <article>
+            <h3>${producto.title}</h3>
+            <figure>
+              <img src="${producto.images[0]}" alt="${producto.title}">
+              <figcaption>$${producto.price}</figcaption>
+            </figure>
+            <p>
+              ${producto.description}
+            </p>
+            <button>Agregar al Carrito</button>
+          </article>
+        `;
+      });
 
-      return  `
+      // Agregamos los elementos del array al contenedor Productos del html
+      document.getElementById("Productos").innerHTML = productos.join("");
 
-                <article>
-                <h3>${producto.title}</h3>
-                <figure>
-                    <img src="${producto.images[0]}" alt="${producto.title}">
-                    <figcaption>$${producto.price}</figcaption>
-                </figure>
-                <p>
-                ${producto.description}
-                </p>
-                <button>Agregar al Carrito</button>
-                </article>
-            
-              `;
+      // (Codigo que se ejecuta si falla el try)
+    } catch (error) {
 
-    });
-
-    // Agregamos los elementos del array al contenedor Productos del html
-    document.getElementById("Productos").innerHTML = productos.join("");
-
-    // (Codigo que se ejecuta si falla el try)
-  } catch (error) {
-
-    // Mostramos cualquier error que ocurra
-    console.error("Error:", error);
+      // Mostramos cualquier error que ocurra
+      console.error("Error:", error);
+    }
   }
-}
 
-// Llamado a la función para que haga la petición
-obtenerLentes();
+  // Llamado a la función para que haga la petición
+  obtenerLentes();
+
+  // Boton hamburguesa
+  const btnMenu = document.getElementById('btnMenu');
+  const menu = document.getElementById('menu');
+
+  btnMenu.addEventListener('click', () => {
+    // Alternar clase "show" al menú responsive
+    if (menu.classList.contains('show')) {
+      menu.classList.remove('show');
+    } else {
+      menu.classList.add('show');
+    }
+  });
+
+  // Hacer que el menú responsive se oculte al hacer clic en cualquier enlace del menú
+  const enlacesMenu = document.querySelectorAll('.menu-responsive nav ul li a');
+
+  enlacesMenu.forEach(enlace => {
+    enlace.addEventListener('click', () => {
+      menu.classList.remove('show');
+    });
+  });
 
 });
