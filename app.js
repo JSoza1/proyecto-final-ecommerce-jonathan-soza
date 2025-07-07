@@ -36,13 +36,38 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>
               ${producto.description}
             </p>
-            <button>Agregar al Carrito</button>
+            <button class="btn-agregar" data-id="${producto.id}">Agregar al Carrito</button>
           </article>
         `;
       });
 
       // Agregamos los elementos del array al contenedor Productos del html
       document.getElementById("Productos").innerHTML = productos.join("");
+
+      // Buscamos todos los botones con la clase btn-agregar y los almacenamos en variable para usarlos despues
+      const botonesAgregar = document.querySelectorAll(".btn-agregar");
+
+      // Recorremos todos los botones
+      botonesAgregar.forEach(boton => {
+      // A cada boton recorrido se le agrega el evento click
+      boton.addEventListener("click", () => {
+      // Pasamos el id del producto clickeado a una variable | ademas es convertido a un entero con parseInt
+      const idProducto = parseInt(boton.dataset.id);
+      // Buscamos el producto completo en el array productosCompletos
+      const productoSeleccionado = productosCompletos.find(producto => producto.id === idProducto);
+      // Recuperamos el carrito del LocalStorage o iniciamos vacío
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      // Agregamos el producto seleccionado al carrito
+      carrito.push(productoSeleccionado);
+      // Guardamos el carrito actualizado en LocalStorage
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+
+      alert(`Se agregó "${productoSeleccionado.title}" al carrito.`);
+      
+      actualizarContador();
+      });
+    });
+
 
       // (Codigo que se ejecuta si falla el try)
     } catch (error) {
@@ -77,4 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Contador
+  function actualizarContador() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    document.getElementById("contador").textContent = carrito.length;
+  }
+  actualizarContador();
+
 });
+
