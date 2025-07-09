@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-
       // (Codigo que se ejecuta si falla el try)
     } catch (error) {
 
@@ -110,4 +109,3 @@ document.addEventListener('DOMContentLoaded', () => {
   actualizarContador();
 
 });
-
