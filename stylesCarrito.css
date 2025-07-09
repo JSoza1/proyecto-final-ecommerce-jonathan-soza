@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    overflow-x: hidden; /* Evita scroll horizontal por elementos desbordados */
+}
+
+#carrito {
+    padding-top: 3%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Tarjeta del producto */
+.item-carrito {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.imagen-carrito {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+}
+
+.imagen-carrito img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.4rem;
+}
+
+.titulo-eliminar-carrito {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+}
+
+.titulo-carrito h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.eliminar-carrito {
+  display: flex;
+}
+
+.eliminar-btn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.eliminar-btn:hover {
+  background-color: #c0392b;
+}
+
+.precio-carrito {
+  flex: 0 0 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 60px;
+}
+
+.precio-carrito p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Contenedor del total */
+#resumen-carrito {
+  max-width: 900px;
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  display: none; /* Oculto por defecto, se muestra cuando hay productos */
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Contenedor de los botones */
+#acciones-carrito {
+  max-width: 900px;
+  margin: 0.5rem auto 2rem;
+  padding: 0 1rem;
+  display: none; /* Oculto por defecto, se muestra cuando hay productos */
+  justify-content: space-between;
+  gap: 1rem;
+  display: flex; /* Para que los botones estén en extremos */
+}
+
+/* Estilo general de los botones */
+#acciones-carrito button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+/* Botón vaciar carrito: rojo */
+#vaciar-carrito {
+  background-color: #e74c3c;
+}
+
+#vaciar-carrito:hover {
+  background-color: #c0392b;
+}
+
+/* Botón finalizar compra: verde */
+#finalizar-compra {
+  background-color: #27ae60;
+}
+
+#finalizar-compra:hover {
+  background-color: #1e8449;
+}
+
+a img {
+  display: block; /* elimina el espacio blanco inferior */
+}

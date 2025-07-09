@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesCarrito.css">
 </head>
 <body>
-    <h1>Carrito de Compras</h1>
-    <section id="carrito"></section>
+    <header>
+        <div class="contenedor-header">
+            <div class="sub-contenedor-header">
+                <a href="index.html">
+                    <img id="logo" src="assets\logo.png" alt="logoDeMarca">
+                </a>
+            </div>
+            <div class="sub-contenedor-header2">
+                <h1>Carrito</h1>
+            </div>
+        </div>
+    </header>
+    
+    <div id="carrito"></div>
+    <div id="resumen-carrito">
+        <p>Total: $<span id="total-carrito">0</span></p>
+    </div>
+    <div id="acciones-carrito">
+        <button id="vaciar-carrito">Vaciar carrito</button>
+        <button id="finalizar-compra">Finalizar compra</button>
+    </div>
     <script src="carrito.js"></script>
 </body>
 </html>
